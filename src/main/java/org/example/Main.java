@@ -3,11 +3,13 @@ package org.example;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 //    Main.getfileInfo();
-        Main.writeFile();
+//        Main.writeFile();
+        Main.readFile();
     }
     public static void getfileInfo(){
         File file =  new File("C:\\Users\\rushi\\Downloads\\firstProject\\File_handling\\test.txt");
@@ -36,6 +38,19 @@ public class Main {
         }
         catch(IOException e){
            e.printStackTrace();
+        }
+    }
+    public static void readFile(){
+        File file =  new File("C:\\Users\\rushi\\Downloads\\firstProject\\File_handling\\test.txt");
+        try{
+            Scanner sc = new Scanner(file);
+            while(sc.hasNext()) {
+                String fileRead = sc.nextLine();
+                System.out.println(fileRead);
+            }
+        }
+        catch(IOException e){
+            e.printStackTrace();
         }
     }
 
